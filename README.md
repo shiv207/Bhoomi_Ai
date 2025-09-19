@@ -1,86 +1,190 @@
-# Bhoomi_AI 🌱
+# Bhoomi AI - Smart Farming Assistant 🌾
 
-Because the soil has secrets — we just convinced it to spill the beans.
+An AI-driven advisory web application for farmers that provides personalized crop recommendations, weather-based farming advice, and natural pest control solutions using real-time data and local agricultural knowledge.
 
-## Overview
-Bhoomi_AI is a data-first project focused on Indian agriculture. It collects real soil analysis reports and crop recommendation data so you (or your future AI overlord) can learn what to grow, where to grow it, and why your plants have been judging your watering schedule.
+## 🌟 Features
 
-At the moment, this repository is a clean, versioned home for:
-- District-level soil analysis PDFs for Jharkhand.
-- A crop recommendation dataset for Karnataka.
+- **AI-Powered Advisory**: Get personalized farming advice using Groq's LLM
+- **Real-time Weather Integration**: Weather-based recommendations using OpenWeather API
+- **Local Dataset Integration**: Access to crop, pest, and soil data for Indian states
+- **Multi-State Support**: Kerala, Karnataka, Jharkhand, and Uttar Pradesh
+- **Natural Pest Control**: Organic and sustainable farming solutions
+- **Responsive UI**: Modern, mobile-friendly interface
 
-The goal is to enable rapid experimentation for agronomy-flavored ML, analytics, and decision support tools. Models and notebooks will join the party soon — for now, we laid the red carpet.
+## 🚀 Quick Start
 
-## What’s inside
-- `Jharkhand dataset/`
-  - Soil analysis reports (PDF) by district: pH, nutrients, and other details that plants care about more than we do.
-- `Karnataka dataset/`
-  - `Crop_recommendation.csv`: tabular data suitable for ML experiments.
+### Prerequisites
 
-## Quick start
-Clone the repo and start poking around:
+- Node.js (v16 or higher)
+- npm or yarn
+- API keys for Groq and OpenWeather
 
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd Bhoomi_AI
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm run install:all
+   ```
+
+3. **Set up environment variables**
+   ```bash
+   # Copy environment files
+   cp env.example .env
+   cp src/client/env.example src/client/.env
+   
+   # Edit .env with your API keys
+   GROQ_API_KEY=your_groq_api_key_here
+   OPENWEATHER_API_KEY=your_openweather_api_key_here
+   ```
+
+4. **Start the application**
+   ```bash
+   npm run dev
+   ```
+
+   This will start:
+   - Backend server on `http://localhost:3001`
+   - Frontend React app on `http://localhost:3000`
+
+## 🏗️ Project Structure
+
+```
+Bhoomi_AI/
+├── src/
+│   ├── server/                 # Express.js backend
+│   │   ├── routes/            # API routes
+│   │   ├── services/          # Business logic
+│   │   └── types/             # TypeScript types
+│   └── client/                # React frontend
+│       ├── src/
+│       │   ├── components/    # React components
+│       │   ├── services/      # API services
+│       │   └── types/         # TypeScript types
+├── kerala_dataset/            # Kerala agricultural data
+├── Karnataka_dataset/         # Karnataka agricultural data
+├── Jharkhand_dataset/         # Jharkhand agricultural data
+├── utterpradesh_dataset/      # UP agricultural data
+├── Soil moisture/             # Soil moisture data
+└── PH data/                   # pH and crop recommendation data
+```
+
+## 🔧 API Endpoints
+
+### Weather API
+- `GET /api/weather/current?city=cityName&state=stateName`
+- `GET /api/weather/coords?lat=latitude&lon=longitude`
+- `GET /api/weather/forecast?lat=latitude&lon=longitude`
+
+### AI Advisory API
+- `POST /api/ai/ask` - Main AI advisory endpoint
+- `POST /api/ai/quick-advice` - Quick advice for common queries
+
+### Data API
+- `GET /api/data/:state` - Get complete dataset for a state
+- `GET /api/data/:state/crops` - Get crops data
+- `GET /api/data/:state/recommendations` - Get crop recommendations
+- `GET /api/data/states` - Get supported states
+
+## 🌐 Supported States
+
+- **Kerala**: Coconut, rubber, paddy, spices
+- **Karnataka**: Coffee, sugarcane, cotton, ragi
+- **Jharkhand**: Rice, wheat, maize, pulses
+- **Uttar Pradesh**: Wheat, rice, sugarcane, potato
+
+## 📊 Datasets
+
+### Kerala Dataset
+- **kerala_crops_economic_importance.csv**: Crop economic importance and regional data
+
+### Karnataka Dataset
+- **Karnataka_pests___natural_pesticides__common_names_.csv**: Pest control information
+
+### Jharkhand Dataset
+- **jharkhand_crops_economic_importance.csv**: Crop economic data
+- **jharkhand_pests_natural_pesticides.csv**: Natural pest control methods
+
+### Uttar Pradesh Dataset
+- **uttar_pradesh_crops_economic_output.csv**: Economic output data
+- **uttar_pradesh_crops_pests_natural_pesticides.csv**: Pest management data
+
+### Additional Data
+- **PH data/Crop_recommendation.csv**: pH-based crop recommendations
+- **Soil moisture/**: State-wise soil moisture data (2020)
+
+## 🔑 API Keys Setup
+
+### Groq API Key
+1. Visit [Groq Console](https://console.groq.com/)
+2. Sign up/login and create an API key
+3. Add to your `.env` file
+
+### OpenWeather API Key
+1. Visit [OpenWeather](https://openweathermap.org/api)
+2. Sign up for a free account
+3. Generate an API key
+4. Add to your `.env` file
+
+## 🛠️ Development
+
+### Backend Development
 ```bash
-git clone https://github.com/shiv207/Bhoomi_Ai.git
-cd Bhoomi_Ai
+npm run dev:server
 ```
 
-If you use Python, here's a tiny snack using pandas:
-
-```python
-import pandas as pd
-
-# Explore the crop recommendation data
-path = "Karnataka dataset/Crop_recommendation.csv"
-df = pd.read_csv(path)
-print(df.head())
-print("Rows:", len(df))
-print("Columns:", list(df.columns))
+### Frontend Development
+```bash
+npm run dev:client
 ```
 
-Reading PDFs? Bring your favorite parser. For simple skimming, your OS preview works great. For NLP adventures, consider `pdfplumber`, `PyMuPDF` (fitz), or `pdftotext`.
+### Build for Production
+```bash
+npm run build
+```
 
-## Why this repo exists
-- Make real-world agri data easy to find and use.
-- Encourage reproducible workflows (notebooks, scripts coming soon).
-- Provide a foundation for crop recommendation, soil health analytics, and region-specific insights.
+## 🧪 Example Usage
 
-## Ideas you can try next
-- Train a quick baseline classifier/regressor on the Karnataka dataset.
-- Parse PDFs from Jharkhand and build district-wise nutrient maps.
-- Build a Streamlit dashboard that says: “Grow X here, and here’s why.”
-- Feature engineering bingo: weather, soil type, irrigation, and farmer wisdom™.
+### Query Examples
+- "What crops should I plant in Kerala during monsoon season?"
+- "How can I control pests in my rice field naturally?"
+- "What's the best time to plant wheat in UP based on current weather?"
+- "How can I improve soil health in Karnataka?"
 
-## Roadmap (a.k.a. Planting schedule)
-- Notebooks for EDA and baseline models.
-- Model cards describing assumptions and trade-offs.
-- Lightweight API for recommendations.
-- Optional: GIS layers because maps make everything cooler.
+### Quick Actions
+- **Crop Recommendations**: Get region-specific crop suggestions
+- **Pest Control**: Natural pest management methods
+- **Weather Advice**: Weather-based farming tips
+- **Soil Health**: Soil management guidance
 
-## Data notes
-- The PDF reports are district-level summaries. Treat them as macro indicators.
-- The CSV is ready-to-use. Watch for class balance and unit consistency.
-- If your plants start giving TED talks, you probably overfit.
+## 🤝 Contributing
 
-## Repo hygiene
-- We keep binaries light and version control friendly.
-- `.gitignore` is set up to ignore OS junk, virtual envs, and node modules.
-
-## Contributing
-PRs are welcome! Whether it’s fixing a typo, adding a notebook, or making the README 1% funnier, we appreciate it.
-
-1. Fork the repo
+1. Fork the repository
 2. Create a feature branch
-3. Commit with clear messages
-4. Open a PR with context and screenshots (if relevant)
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
 
-## License
-TBD. If you plan to use this in production or research, open an issue so we can prioritize adding a proper license.
+## 📄 License
 
-## Acknowledgements
-- Farmers, scientists, and anyone who’s ever stuck a pH strip into mud.
-- You, for being here. Go grow something amazing.
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgments
+
+- Agricultural data compiled from various state government sources
+- Weather data provided by OpenWeather API
+- AI capabilities powered by Groq
+- Built with React, TypeScript, and Express.js
+
+## 📞 Support
+
+For support, please open an issue in the GitHub repository or contact the development team.
 
 ---
 
-If this repo helped you, star it. If it made you smile, star it twice (once here, once in your heart). 🌾
+**Made with ❤️ for Indian farmers**

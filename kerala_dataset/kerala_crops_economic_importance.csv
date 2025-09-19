@@ -1,0 +1,13 @@
+crop,category,economic_importance,primary_districts,notes,source
+Coconut,Plantation/Perennial,High,All districts (high in coastal districts),Kerala is a major coconut producer in India.,Kerala Agricultural Statistics 2023; Kerala Tourism
+Rubber,Plantation/Perennial,High,"Kottayam, Pathanamthitta, Idukki, Ernakulam",Major cash crop for smallholders; significant contribution to plantation sector.,Kerala Economic Review; Agricultural Statistics 2023
+Paddy (Rice),Cereal,High,"Palakkad, Kottayam, Alappuzha, Thrissur",Staple food crop though area declining in many districts.,Kerala Agricultural Statistics 2023; Times of India reporting on paddy decline
+Tea,Plantation/Perennial,High,"Idukki, Wayanad",Commercial plantations in high ranges.,Kerala Tourism; Agricultural Statistics 2023
+Coffee,Plantation/Perennial,High,"Wayanad, Idukki, Malappuram",Robusta and Arabica grown in high ranges.,Kerala Tourism; Economic Review
+Black Pepper,Spice,High,"Idukki, Wayanad, Kozhikode, Malappuram",Kerala is a major pepper producer historically.,Kerala Tourism; Agricultural Statistics 2023
+Cardamom,Spice,High,"Idukki, Wayanad, Pathanamthitta",High-value spice grown in high ranges.,Economic Review; Agricultural Statistics 2023
+Cashew,Tree crop,Medium,"Kozhikode, Kannur, Kollam",Important but lower value than major plantation crops.,Agricultural Statistics 2023
+Banana / Plantain,Horticulture,Medium,"Thiruvananthapuram, Kollam, Alappuzha",Vegetable and fruit supply across state; profitable for smallholders.,Agricultural Statistics 2023; Times of India
+Arecanut (Betel nut),Tree crop,Medium,"Kannur, Kasaragod, Kozhikode",Regionally important.,Agricultural Statistics 2023
+Cocoa,Tree crop,Low,"Kottayam, Palakkad, Thrissur",Smaller area but promoted as intercrop in plantations.,Agricultural Statistics 2023
+Vegetables (grouped),Horticulture,Medium,"Palakkad, Wayanad, Kannur",Significant for local markets and high-value returns.,Agricultural Statistics 2023

@@ -1,0 +1,14 @@
+crop,category,economic_importance,primary_districts,notes,source
+Rice (Paddy),Cereal,High,"Ranchi, Palamu, Hazaribagh, Dumka",Staple food crop and dominant in kharif season.,Jharkhand Economic Survey 2023; Agricultural Statistics
+Maize,Cereal,High,"Ranchi, Latehar, Gumla",Important kharif crop; food and fodder use.,Agricultural Statistics; Govt reports
+Wheat,Cereal,Medium,"Palamu, Hazaribagh, Dhanbad","Grown in rabi season, contributes to food security.",Agricultural Statistics
+"Pulses (Arhar, Gram, Lentil)",Pulse,High,"Ranchi, Palamu, Chatra, Latehar",Jharkhand is a significant pulse producer; supports nutrition and soil health.,Economic Survey 2023
+"Oilseeds (Mustard, Linseed)",Oilseed,Medium,"Palamu, Hazaribagh, Ranchi",Oilseed cultivation contributes to household oil consumption and income.,Agricultural Statistics
+Sugarcane,Cash crop,Medium,"Palamu, Garhwa, Chatra",Limited area but high value per hectare.,Economic Survey
+Potato,Horticulture,Medium,"Ranchi, Hazaribagh, Gumla",Important rabi vegetable crop.,Agricultural Statistics
+Tomato,Horticulture,Medium,"Ranchi, Khunti, Gumla",Commercial vegetable with good market demand.,Horticulture Dept reports
+Onion,Horticulture,Medium,"Deoghar, Giridih, Ranchi","Widely consumed vegetable, grown in rabi.",Agricultural Statistics
+Mango,Fruit,High,"Giridih, Deoghar, Dumka, Godda",Major fruit crop with export potential.,Horticulture Dept
+Litchi,Fruit,Medium,"Deoghar, Dumka, Pakur",High-value seasonal fruit.,Horticulture Dept
+Banana,Fruit,Medium,"Ranchi, Sahibganj, Godda","Commercial fruit, year-round demand.",Agricultural Statistics
+Jackfruit,Fruit,Medium,"Ranchi, Gumla, Khunti",Traditional fruit crop with increasing commercial use.,Horticulture Dept

@@ -1,0 +1,7 @@
+fertilizer_id,fertilizer_name,type,nutrient_content,crops_suited_in_red_soils,avg_yield_increase_%,avg_cost_inr_per_ha,est_revenue_gain_inr_per_ha,economic_importance,notes,source_refs
+1,Urea,Chemical (Nitrogenous),46% N,"Paddy, Finger millet (Ragi), Groundnut, Cotton",25,3500,18000,High,Most common N source; supports cereals and oilseeds in red soils.,ICAR-Karnataka soils report; State Agri Dept
+2,DAP (Diammonium Phosphate),Chemical (Complex),"18% N, 46% P2O5","Pulses, Oilseeds, Millets",20,5000,15000,High,Balances phosphorus-deficiency in red soils; improves root growth.,Karnataka Agriculture University trials
+3,Farmyard Manure (FYM),Organic,"0.5% N, 0.2% P, 0.5% K","Groundnut, Vegetables, Millets",10,6000,10000,Medium,Improves soil organic matter; enhances long-term fertility.,IIHR Bangalore organic farming guide
+4,Neem Cake,Organic,"2-5% N, trace minerals","Groundnut, Pulses, Cotton",12,7000,14000,Medium,Acts as fertilizer and pest repellent; popular in Karnataka’s dry zones.,Karnataka State Organic Mission
+5,Rhizobium Biofertilizer,Biofertilizer,Biological N-fixation,"Pulses (Red gram, Cowpea, Green gram)",18,500,8000,High,Very cost-effective for pulses grown widely in red soils.,UAS Dharwad biofertilizer field trials
+6,Azospirillum Biofertilizer,Biofertilizer,Associative N-fixation,"Millets (Ragi, Sorghum), Maize",15,600,9000,High,Boosts yield of cereals in rainfed red soils of Karnataka.,UAS Bangalore extension bulletins
