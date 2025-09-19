@@ -4,12 +4,21 @@ An AI-driven advisory web application for farmers that provides personalized cro
 
 ## 🌟 Features
 
-- **AI-Powered Advisory**: Get personalized farming advice using Groq's LLM
-- **Real-time Weather Integration**: Weather-based recommendations using OpenWeather API
-- **Local Dataset Integration**: Access to crop, pest, and soil data for Indian states
-- **Multi-State Support**: Kerala, Karnataka, Jharkhand, and Uttar Pradesh
+### 🤖 Multi-Agent Intelligence System
+- **Weather Agent**: 4-month forecast analysis, seasonal patterns, and climate risk assessment
+- **Soil Agent**: GPS-based soil profiling, crop suitability analysis, and nutrient management
+- **Biome Agent**: Ecological conditions, biodiversity considerations, and environmental sustainability
+- **Economic Agent**: Market analysis, ROI calculations, investment planning, and price trends
+- **Pest Control Agent**: Integrated pest management, organic controls, and monitoring strategies
+
+### 🚀 Core Capabilities
+- **AI-Powered Advisory**: Multi-agent coordination providing research-backed recommendations
+- **Real-time Weather Integration**: Advanced weather analysis with agricultural insights
+- **GPS-Based Soil Intelligence**: Precision soil analysis from location coordinates
+- **Local Dataset Integration**: Comprehensive data for 5 Indian states with district-level granularity
+- **Live Internet Search**: Real-time agricultural data and market information
 - **Natural Pest Control**: Organic and sustainable farming solutions
-- **Responsive UI**: Modern, mobile-friendly interface
+- **Economic Optimization**: ROI-focused crop recommendations with market timing
 
 ## 🚀 Quick Start
 
@@ -93,10 +102,11 @@ Bhoomi_AI/
 
 ## 🌐 Supported States
 
-- **Kerala**: Coconut, rubber, paddy, spices
-- **Karnataka**: Coffee, sugarcane, cotton, ragi
-- **Jharkhand**: Rice, wheat, maize, pulses
-- **Uttar Pradesh**: Wheat, rice, sugarcane, potato
+- **Kerala**: Coconut, rubber, paddy, spices - with district-wise soil pH and pest data
+- **Karnataka**: Coffee, sugarcane, cotton, ragi - with red soil fertilizer recommendations
+- **Jharkhand**: Rice, wheat, maize, pulses - with comprehensive economic importance data
+- **Uttar Pradesh**: Wheat, rice, sugarcane, potato - with crop output and pest management
+- **Goa**: Comprehensive soil pH analysis and agricultural insights
 
 ## 📊 Datasets
 
