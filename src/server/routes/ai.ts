@@ -22,15 +22,11 @@ aiRouter.post('/ask', async (req, res) => {
       } as ApiResponse<never>);
     }
 
-    if (!state || typeof state !== 'string') {
-      return res.status(400).json({
-        success: false,
-        error: 'State is required and must be a string'
-      } as ApiResponse<never>);
-    }
-
+    // Use provided state or default to kerala
+    const stateValue = state && typeof state === 'string' ? state : 'kerala';
+    
     // Normalize state name
-    const normalizedState = state.toLowerCase() as SupportedState;
+    const normalizedState = stateValue.toLowerCase() as SupportedState;
     const supportedStates = ['kerala', 'karnataka', 'jharkhand', 'uttarpradesh', 'up'];
     
     if (!supportedStates.includes(normalizedState)) {

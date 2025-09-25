@@ -1,0 +1,322 @@
+/* Neumorphic Markdown Styling */
+
+.neu-markdown-container {
+  color: var(--neu-text-primary);
+  font-family: var(--font-family);
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+/* Headings */
+.neu-markdown-h1 {
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--neu-text-primary);
+  margin: var(--spacing-xl) 0 var(--spacing-lg) 0;
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--neu-surface-pressed);
+  text-shadow: 1px 1px 2px rgba(174, 174, 192, 0.3);
+}
+
+.neu-markdown-h2 {
+  font-size: 1.75rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--neu-text-primary);
+  margin: var(--spacing-lg) 0 var(--spacing-md) 0;
+  text-shadow: 1px 1px 2px rgba(174, 174, 192, 0.3);
+}
+
+.neu-markdown-h3 {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--neu-text-primary);
+  margin: var(--spacing-lg) 0 var(--spacing-md) 0;
+}
+
+.neu-markdown-h4 {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--neu-text-primary);
+  margin: var(--spacing-md) 0 var(--spacing-sm) 0;
+}
+
+.neu-markdown-h5 {
+  font-size: 1.1rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--neu-text-primary);
+  margin: var(--spacing-md) 0 var(--spacing-sm) 0;
+}
+
+.neu-markdown-h6 {
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--neu-text-secondary);
+  margin: var(--spacing-md) 0 var(--spacing-sm) 0;
+}
+
+/* Paragraphs */
+.neu-markdown-p {
+  margin: 0 0 var(--spacing-md) 0;
+  line-height: 1.6;
+  color: var(--neu-text-primary);
+}
+
+.neu-markdown-p:last-child {
+  margin-bottom: 0;
+}
+
+/* Lists */
+.neu-markdown-ul,
+.neu-markdown-ol {
+  margin: var(--spacing-md) 0;
+  padding-left: var(--spacing-xl);
+  color: var(--neu-text-primary);
+}
+
+.neu-markdown-li {
+  margin: var(--spacing-xs) 0;
+  line-height: 1.6;
+}
+
+.neu-markdown-ul .neu-markdown-li {
+  list-style-type: disc;
+}
+
+.neu-markdown-ol .neu-markdown-li {
+  list-style-type: decimal;
+}
+
+/* Nested lists */
+.neu-markdown-ul ul,
+.neu-markdown-ol ul,
+.neu-markdown-ul ol,
+.neu-markdown-ol ol {
+  margin: var(--spacing-xs) 0;
+}
+
+/* Links */
+.neu-markdown-link {
+  color: var(--neu-accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.neu-markdown-link:hover {
+  color: var(--neu-accent-secondary);
+  border-bottom-color: var(--neu-accent-secondary);
+  text-shadow: 0 0 8px rgba(52, 199, 89, 0.3);
+}
+
+.neu-markdown-link:visited {
+  color: var(--neu-text-secondary);
+}
+
+/* Inline Code */
+.neu-markdown-inline-code {
+  background: var(--neu-surface-pressed);
+  color: var(--neu-accent);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 0.9em;
+  box-shadow: var(--neu-shadow-inset);
+  border: 1px solid rgba(174, 174, 192, 0.2);
+}
+
+/* Code Blocks */
+.neu-code-block {
+  margin: var(--spacing-md) 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--neu-shadow-inset);
+  position: relative;
+  background: var(--neu-surface-pressed);
+  border: 1px solid rgba(174, 174, 192, 0.2);
+}
+
+.neu-markdown-pre {
+  margin: 0;
+  padding: var(--spacing-lg);
+  background: transparent;
+  overflow-x: auto;
+  font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.neu-markdown-code {
+  color: var(--neu-text-primary);
+  background: transparent;
+  font-family: inherit;
+  white-space: pre;
+}
+
+.neu-code-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+/* Tables */
+.neu-markdown-table-container {
+  margin: var(--spacing-lg) 0;
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--neu-shadow-raised);
+  background: var(--neu-surface);
+}
+
+.neu-markdown-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.neu-markdown-thead {
+  background: var(--neu-surface-raised);
+  position: relative;
+}
+
+.neu-markdown-th {
+  padding: var(--spacing-md);
+  text-align: left;
+  font-weight: var(--font-weight-semibold);
+  color: var(--neu-text-primary);
+  border-bottom: 2px solid var(--neu-surface-pressed);
+  position: relative;
+}
+
+.neu-markdown-th:not(:last-child) {
+  border-right: 1px solid var(--neu-surface-pressed);
+}
+
+.neu-markdown-td {
+  padding: var(--spacing-md);
+  color: var(--neu-text-primary);
+  border-bottom: 1px solid rgba(174, 174, 192, 0.1);
+  position: relative;
+}
+
+.neu-markdown-td:not(:last-child) {
+  border-right: 1px solid rgba(174, 174, 192, 0.1);
+}
+
+.neu-markdown-tr:nth-child(even) .neu-markdown-td {
+  background: rgba(174, 174, 192, 0.05);
+}
+
+.neu-markdown-tr:hover .neu-markdown-td {
+  background: rgba(0, 122, 255, 0.1);
+  transition: background-color var(--transition-base);
+}
+
+/* Blockquotes */
+.neu-markdown-blockquote {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-lg);
+  background: var(--neu-surface-raised);
+  border-left: 4px solid var(--neu-accent-secondary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--neu-shadow-subtle);
+  position: relative;
+  font-style: italic;
+  color: var(--neu-text-secondary);
+}
+
+.neu-markdown-blockquote::before {
+  content: '"';
+  font-size: 4rem;
+  color: var(--neu-accent-secondary);
+  position: absolute;
+  top: -10px;
+  left: var(--spacing-md);
+  font-family: serif;
+  opacity: 0.3;
+}
+
+.neu-markdown-blockquote p {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Horizontal Rule */
+.neu-markdown-hr {
+  border: none;
+  height: 2px;
+  background: var(--neu-surface-pressed);
+  margin: var(--spacing-xl) 0;
+  border-radius: 1px;
+  box-shadow: var(--neu-shadow-inset);
+}
+
+/* Text Formatting */
+.neu-markdown-strong {
+  font-weight: var(--font-weight-bold);
+  color: var(--neu-text-primary);
+  text-shadow: 0.5px 0.5px 1px rgba(174, 174, 192, 0.2);
+}
+
+.neu-markdown-em {
+  font-style: italic;
+  color: var(--neu-text-secondary);
+}
+
+/* Animations for new content */
+.neu-markdown-container {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .neu-markdown-h1 {
+    font-size: 1.75rem;
+  }
+  
+  .neu-markdown-h2 {
+    font-size: 1.5rem;
+  }
+  
+  .neu-markdown-h3 {
+    font-size: 1.25rem;
+  }
+  
+  .neu-markdown-table-container {
+    font-size: 0.8rem;
+  }
+  
+  .neu-markdown-th,
+  .neu-markdown-td {
+    padding: var(--spacing-sm);
+  }
+  
+  .neu-markdown-blockquote {
+    padding: var(--spacing-md);
+  }
+}
+
+/* Dark mode support (if needed) */
+@media (prefers-color-scheme: dark) {
+  .neu-markdown-container {
+    /* Future dark mode implementation */
+    filter: none;
+  }
+}

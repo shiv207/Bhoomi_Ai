@@ -1,49 +1,133 @@
-/* Terminal App Global Styles */
+/* Harvestly - Matte Plastic Neumorphic Design System */
+
+:root {
+  /* Neumorphic Color Palette - Matte Plastic */
+  --neu-background: #E8E8ED;
+  --neu-surface: #E8E8ED;
+  --neu-surface-raised: #F0F0F5;
+  --neu-surface-pressed: #E0E0E5;
+  --neu-text-primary: #2C2C2E;
+  --neu-text-secondary: #8E8E93;
+  --neu-text-tertiary: #C7C7CC;
+  --neu-accent: #007AFF;
+  --neu-accent-secondary: #34C759;
+  --neu-accent-warning: #FF9500;
+  --neu-accent-error: #FF3B30;
+  
+  /* Neumorphic Shadow System - Soft & Minimal */
+  --neu-shadow-raised: 
+    6px 6px 12px rgba(174, 174, 192, 0.6),
+    -6px -6px 12px rgba(255, 255, 255, 0.9);
+  --neu-shadow-pressed: 
+    inset 3px 3px 6px rgba(174, 174, 192, 0.4),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.8);
+  --neu-shadow-floating: 
+    8px 8px 16px rgba(174, 174, 192, 0.5),
+    -8px -8px 16px rgba(255, 255, 255, 0.95);
+  --neu-shadow-subtle: 
+    3px 3px 6px rgba(174, 174, 192, 0.3),
+    -3px -3px 6px rgba(255, 255, 255, 0.7);
+  --neu-shadow-inset: 
+    inset 2px 2px 4px rgba(174, 174, 192, 0.25),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.9);
+    
+  /* Typography */
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  
+  /* Border Radius */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 50%;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
 body {
-  font-family: 'Courier New', 'Monaco', 'Menlo', monospace;
-  background-color: #0a0a0a;
-  color: #00ff00;
-  overflow: hidden;
+  font-family: var(--font-family);
+  background: var(--neu-background);
+  color: var(--neu-text-primary);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  
+  /* Minimal neumorphic texture */
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255,255,255,0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(174,174,192,0.03) 0%, transparent 50%);
+  background-size: 400px 400px, 300px 300px;
+  background-position: 0 0, 200px 150px;
 }
 
 .terminal-app {
   height: 100vh;
   width: 100vw;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Remove default scrollbars */
-html, body {
-  scrollbar-width: thin;
-  scrollbar-color: #333 #1a1a1a;
-}
-
-/* Custom scrollbar for webkit browsers */
+/* Neumorphic scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  background: var(--neu-surface);
+  border-radius: 6px;
+  box-shadow: var(--neu-shadow-inset);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 4px;
+  background: var(--neu-surface);
+  border-radius: 6px;
+  box-shadow: var(--neu-shadow-subtle);
+  border: 1px solid rgba(174, 174, 192, 0.1);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  box-shadow: var(--neu-shadow-raised);
+}
+
+::-webkit-scrollbar-thumb:active {
+  box-shadow: var(--neu-shadow-pressed);
+}
+
+/* Firefox scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--neu-text-tertiary) var(--neu-surface);
 }
 
 /* Disable text selection on UI elements */
 .terminal-header,
-.terminal-input-form {
+.terminal-input-form,
+.quick-actions {
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -54,6 +138,317 @@ html, body {
 .terminal-messages {
   user-select: text;
   -webkit-user-select: text;
-  -moz-user-select: text;
-  -ms-user-select: text;
+}
+
+/* Neumorphic Component Base Classes */
+
+/* Neumorphic Button */
+.neumorphic-button {
+  background: var(--neu-surface);
+  border: none;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--neu-shadow-raised);
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  color: var(--neu-text-primary);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.neumorphic-button:hover {
+  box-shadow: var(--neu-shadow-floating);
+  transform: translateY(-1px);
+}
+
+.neumorphic-button:active {
+  box-shadow: var(--neu-shadow-pressed);
+  transform: translateY(0);
+}
+
+.neumorphic-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: var(--neu-shadow-subtle);
+}
+
+/* Neumorphic Input */
+.neumorphic-input {
+  background: var(--neu-surface);
+  border: none;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--neu-shadow-inset);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  color: var(--neu-text-primary);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+
+.neumorphic-input::placeholder {
+  color: var(--neu-text-secondary);
+}
+
+.neumorphic-input:focus {
+  box-shadow: 
+    var(--neu-shadow-inset),
+    0 0 0 2px rgba(0, 122, 255, 0.2);
+}
+
+/* Neumorphic Toggle Switch */
+.neumorphic-toggle {
+  width: 60px;
+  height: 32px;
+  background: var(--neu-surface);
+  border: none;
+  border-radius: 16px;
+  box-shadow: var(--neu-shadow-inset);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neumorphic-toggle::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 28px;
+  height: 28px;
+  background: var(--neu-surface);
+  border-radius: 50%;
+  box-shadow: var(--neu-shadow-raised);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neumorphic-toggle.active {
+  background: var(--neu-accent-secondary);
+}
+
+.neumorphic-toggle.active::before {
+  left: 30px;
+  background: var(--neu-surface-raised);
+}
+
+/* Neumorphic Card */
+.neumorphic-card {
+  background: var(--neu-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--neu-shadow-raised);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neumorphic-card:hover {
+  box-shadow: var(--neu-shadow-floating);
+  transform: translateY(-2px);
+}
+
+/* Neumorphic Panel */
+.neumorphic-panel {
+  background: var(--neu-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--neu-shadow-inset);
+  position: relative;
+}
+
+/* Neumorphic Component Base Classes */
+
+/* Neumorphic Button */
+.neomorphic-button {
+  background: var(--matte-surface);
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-raised);
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  color: var(--matte-text-primary);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.neomorphic-button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-floating);
+}
+
+.neomorphic-button:active {
+  box-shadow: var(--shadow-pressed);
+  transform: translateY(0);
+}
+
+.neomorphic-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: var(--shadow-subtle);
+}
+
+/* Neumorphic Input */
+.neomorphic-input {
+  background: var(--matte-surface);
+  border: none;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-pressed);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  color: var(--matte-text-primary);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+
+.neomorphic-input::placeholder {
+  color: var(--matte-text-secondary);
+  font-weight: var(--font-weight-regular);
+}
+
+.neomorphic-input:focus {
+  box-shadow: 
+    var(--shadow-pressed),
+    0 0 0 2px var(--matte-accent-light);
+}
+
+/* Neumorphic Card */
+.neomorphic-card {
+  background: var(--matte-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-raised);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Brand Logo Styles */
+.harvestly-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.harvestly-logo-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--matte-success);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: var(--font-weight-bold);
+  box-shadow: var(--shadow-subtle);
+}
+
+.harvestly-logo-text {
+  font-size: 28px;
+  font-weight: var(--font-weight-bold);
+  color: var(--matte-text-primary);
+  letter-spacing: -0.02em;
+}
+
+/* Quick Action Buttons */
+.quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  justify-content: center;
+  margin-top: var(--spacing-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quick-action-btn {
+  background: var(--matte-surface);
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-raised);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: 14px;
+  color: var(--matte-text-primary);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  white-space: nowrap;
+}
+
+.quick-action-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-floating);
+}
+
+.quick-action-btn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-pressed);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scale-in {
+  animation: scaleIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide-up {
+  animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .quick-actions {
+    gap: var(--spacing-sm);
+  }
+  
+  .quick-action-btn {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: 13px;
+  }
+  
+  .harvestly-logo-text {
+    font-size: 24px;
+  }
 }

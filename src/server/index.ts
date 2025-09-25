@@ -34,7 +34,7 @@ app.get('/api/health', (req, res) => {
   res.json({ 
     status: 'OK', 
     timestamp: new Date().toISOString(),
-    service: 'Bhoomi AI Advisory Backend'
+    service: 'Harvestly Advisory Backend'
   });
 });
 
@@ -53,6 +53,6 @@ app.use('*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Bhoomi AI Advisory Backend running on port ${PORT}`);
+  console.log(`🚀 Harvestly Advisory Backend running on port ${PORT}`);
   console.log(`📊 Health check: http://localhost:${PORT}/api/health`);
 });

@@ -49,7 +49,7 @@ export class WebSearchService {
           messages: [
             {
               role: 'system',
-              content: `You are BHOOMI AI - an advanced agricultural intelligence system with access to live internet data and market intelligence.
+              content: `You are HARVESTLY - an advanced agricultural intelligence system with access to live internet data and market intelligence.
 
 CAPABILITIES:
 🌐 Internet-Connected: You have access to current agricultural market data, government websites, and research

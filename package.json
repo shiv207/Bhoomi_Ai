@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "bhoomi-ai-advisor",
+  "name": "harvestly",
   "version": "1.0.0",
-  "description": "AI-driven advisory web app for farmers",
+  "description": "AI-driven agricultural advisory platform for smart farming",
   "main": "dist/server/index.js",
   "scripts": {
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
@@ -30,7 +30,7 @@
     "nodemon": "^3.0.2",
     "concurrently": "^8.2.2"
   },
-  "keywords": ["agriculture", "ai", "farming", "advisory", "typescript"],
-  "author": "Bhoomi AI Team",
+  "keywords": ["agriculture", "ai", "farming", "advisory", "typescript", "harvestly"],
+  "author": "Harvestly Team",
   "license": "MIT"
 }

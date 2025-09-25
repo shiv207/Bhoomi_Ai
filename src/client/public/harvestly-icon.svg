@@ -1,0 +1,7 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Placeholder icon - replace with your uploaded image -->
+  <circle cx="24" cy="24" r="20" fill="#34C759" opacity="0.1"/>
+  <path d="M24 8C24 8 16 12 16 20C16 28 20 32 24 40C28 32 32 28 32 20C32 12 24 8 24 8Z" fill="#34C759"/>
+  <circle cx="24" cy="20" r="3" fill="#FFFFFF"/>
+  <path d="M20 28H28M22 32H26" stroke="#34C759" stroke-width="2" stroke-linecap="round"/>
+</svg>

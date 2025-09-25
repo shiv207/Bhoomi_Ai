@@ -1,6 +1,6 @@
-# Bhoomi AI - Smart Farming Assistant 🌾
+# Harvestly - Smart Farming Assistant 🌾
 
-An AI-driven advisory web application for farmers that provides personalized crop recommendations, weather-based farming advice, and natural pest control solutions using real-time data and local agricultural knowledge.
+An AI-driven agricultural advisory platform for smart farming that provides personalized crop recommendations, weather-based farming advice, and natural pest control solutions using real-time data and local agricultural knowledge.
 
 ## 🌟 Features
 
