@@ -71,13 +71,13 @@ export const TerminalChat: React.FC = () => {
         }
       );
     }
-  }, [messages.length]);
+  }, [messages.length, loadWeatherAndState, location]);
 
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
 
-  const loadWeatherAndState = async (locationData: LocationData) => {
+  const loadWeatherAndState = useCallback(async (locationData: LocationData) => {
     try {
       const weatherData = await ApiService.getCurrentWeatherByCoords(
         locationData.lat, 
@@ -93,7 +93,7 @@ export const TerminalChat: React.FC = () => {
       console.log('Failed to fetch weather data, using defaults');
       setUserState('kerala'); // Default fallback
     }
-  };
+  }, []);
 
   const determineStateFromLocation = (lat: number, lon: number): string => {
     // Enhanced state detection for major Indian regions
@@ -276,25 +276,6 @@ export const TerminalChat: React.FC = () => {
       });
     } finally {
       setIsLoading(false);
-    }
-  };
-
-  const formatTimestamp = (timestamp: Date) => {
-    return timestamp.toLocaleTimeString('en-US', { 
-      hour12: false,
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit'
-    });
-  };
-
-  const getMessagePrefix = (type: string) => {
-    switch (type) {
-      case 'system': return '[SYSTEM]';
-      case 'user': return '[USER]';
-      case 'assistant': return '[HARVESTLY]';
-      case 'error': return '[ERROR]';
-      default: return '[INFO]';
     }
   };
 
