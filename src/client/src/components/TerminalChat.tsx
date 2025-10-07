@@ -40,6 +40,24 @@ export const TerminalChat: React.FC = () => {
     console.log('🚀 Terminal initialized');
   }, []);
 
+  const loadWeatherAndState = useCallback(async (locationData: LocationData) => {
+    try {
+      const weatherData = await ApiService.getCurrentWeatherByCoords(
+        locationData.lat, 
+        locationData.lon
+      );
+      setWeather(weatherData);
+
+      // Determine state from coordinates
+      const detectedState = determineStateFromLocation(locationData.lat, locationData.lon);
+      setUserState(detectedState);
+
+    } catch (error) {
+      console.log('Failed to fetch weather data, using defaults');
+      setUserState('kerala'); // Default fallback
+    }
+  }, []);
+
   useEffect(() => {
     // Focus input on mount (only for welcome screen)
     if (messages.length === 0 && inputRef.current) {
@@ -76,24 +94,6 @@ export const TerminalChat: React.FC = () => {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
-
-  const loadWeatherAndState = useCallback(async (locationData: LocationData) => {
-    try {
-      const weatherData = await ApiService.getCurrentWeatherByCoords(
-        locationData.lat, 
-        locationData.lon
-      );
-      setWeather(weatherData);
-
-      // Determine state from coordinates
-      const detectedState = determineStateFromLocation(locationData.lat, locationData.lon);
-      setUserState(detectedState);
-
-    } catch (error) {
-      console.log('Failed to fetch weather data, using defaults');
-      setUserState('kerala'); // Default fallback
-    }
-  }, []);
 
   const determineStateFromLocation = (lat: number, lon: number): string => {
     // Enhanced state detection for major Indian regions
