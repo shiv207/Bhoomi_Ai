@@ -1,26 +1,21 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/index.ts", "use": "@vercel/node" },
+    { "src": "api/index.ts", "use": "@vercel/node", "config": { "includeFiles": [
+      "Goa_dataset/**",
+      "Jharkhand_dataset/**",
+      "Karnataka_dataset/**",
+      "kerala_dataset/**",
+      "PH data/**",
+      "Soil moisture/**",
+      "utterpradesh_dataset/**"
+    ] } },
     { "src": "src/client/package.json", "use": "@vercel/static-build", "config": { "distDir": "build" } }
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/api/index.ts" },
     { "src": "/(.*)", "dest": "/src/client/build/$1" }
   ],
-  "functions": {
-    "api/index.ts": {
-      "includeFiles": [
-        "Goa_dataset/**",
-        "Jharkhand_dataset/**",
-        "Karnataka_dataset/**",
-        "kerala_dataset/**",
-        "PH data/**",
-        "Soil moisture/**",
-        "utterpradesh_dataset/**"
-      ]
-    }
-  },
   "env": {
     "NODE_ENV": "production"
   }
